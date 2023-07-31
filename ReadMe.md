@@ -1,18 +1,30 @@
+<!-- Write a heading to display in center -->
+<h1 align="center">DalleVision : An image generation web app created using MERN Stack</h1>
+
+<!-- adding video tag in readme-->
+<p align="center">
+  <a href="./DalleVision.mp4"></a>
+  <img src="./DalleVision.mp4" alt="DalleVision" />
+
 # Tech Stack used
 :ReactJs and Tailwind for frontend
-, Node.js and ExpressJS as backend with MongoDB Atlas database to store data securely.<|
-im_sep|>
+, Node.js and ExpressJS as backend with MongoDB Atlas database to store data securely.
 
 ## FrontEnd : Technologies Used
- - React Router: A routing module that allows us to define routes within our app without having to manually write code for
- - useNavigate: hook from react-router-dom library is used in navigation between pages of the application.
- - Tailwind CSS: A utility-first CSS framework that provides classes like flexbox layout, margin padding etc., which makes it easy to create responsive designs without writing complex code or using preprocessors such as SASS/
+1) **React Router**
+A routing module that allows us to define routes within our app without having to manually write code for
+2) **useNavigate** 
+hook from react-router-dom library is used in navigation between pages of the application.
+3) **Tailwind CSS** 
+A utility-first CSS framework that provides classes like flexbox layout, margin padding etc., which makes it easy to create responsive designs without writing complex code or using preprocessors such as SASS/
+
 
 ## BackEnd : Technologies Used 
 1) **Node JS**  
 A JavaScript runtime built on Chrome's V8 engine that allows us to run server side code
 using a single language across different platforms like Windows , Linux or MacOS .
-2)**Express Js**:  A fast node js web framework which provides various features such as routing
+2) **Express Js** 
+A fast node js web framework which provides various features such as routing
 , middleware support etc., It helps developers build scalable API’s faster than other frameworks by providing
 easy ways to handle HTTP requests/responses using middlewares.
 3) **MongoDB:**

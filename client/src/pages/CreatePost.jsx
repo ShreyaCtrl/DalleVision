@@ -15,11 +15,35 @@ const CreatePost = () => {
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = () => {};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    if (form.prompt && form.photo) {
+      setLoading(true);
+
+      try {
+        const response = await fetch('http://localhost:8080/api/v1/post', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({...form})
+        })
+
+        await response.json();
+        navigate('/');
+      } catch (error) {
+        alert(error)
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      alert("Please enter a prompt and generate an image");
+    }
   };
+
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSurpriseMe = () => {
     const randomPrompt = getRandomPrompt(form.prompt);
@@ -62,15 +86,16 @@ const CreatePost = () => {
             <FormField
               labelName="Your name"
               type="text"
+              name="name"
               placeholder="John Doe"
               value={form.name}
               handleChange={handleChange}
             />
             <FormField
-              labelName="prompt"
+              labelName="Prompt"
               type="text"
+              name="prompt"
               placeholder="A comic book cover of a superhero wearing headphones"
-              
               value={form.prompt}
               handleChange={handleChange}
               isSurpriseMe
